@@ -16,14 +16,14 @@ display_drink = Text(app, text='',  font="Libre Baskerville")
 recipe = Text(app, text='', font="Libre Baskerville", size = '10')
 
 #   Dictionary with common spirits and their alcohol %
-spirits = {" ":0, 'Amaretto':28, "Bourbon":40, "Campari":24, "Champagne":12, "Chartreuse, Green":55, "Chartreuse, Yellow":40,
-               "Cider, n/a":0, "Cointreau":40, "Genever":43, "Gin":42, "Ginger Beer":0, "Grain":95, "Liqueuer, generic":20, "Luxardo":32, "Mezcal":40,
+spirits = {" ":0, 'Amaretto':28, "Bourbon":40, "Brandy":40, "Campari":24, "Champagne":12, "Chartreuse, Green":55, "Chartreuse, Yellow":40,
+               "Cider, n/a":0, "Cointreau":40, "Cognac":40, "Genever":43, "Gin":42, "Ginger Beer":0, "Grain":95, "Liqueuer, generic":20, "Luxardo":32, "Mezcal":40,
                "Juice":0,"Rum":40, "Scotch":45, "Schnapps":18, "Simple syrup":0, "Soda":0, "Tequila":40, "Tonic":0, "Vermouth":18, "Vokda":40,
                "Water":0, "Whiskey":45, "Wine":15
            }
 
-ingredients = [" ", "Amaretto", "Bourbon", "Campari", "Champagne", "Chartreuse, Green", "Chartreuse, Yellow",
-               "Cider, n/a", "Cointreau", "Genever", "Gin", "Ginger Beer", "Grain", "Liqueuer, generic", "Luxardo", "Mezcal",
+ingredients = [" ", "Amaretto", "Bourbon", "Brandy", "Campari", "Champagne", "Chartreuse, Green", "Chartreuse, Yellow",
+               "Cider, n/a", "Cointreau", "Cognac", "Genever", "Gin", "Ginger Beer", "Grain", "Liqueuer, generic", "Luxardo", "Mezcal",
                "Juice","Rum", "Scotch", "Schnapps", "Simple syrup", "Soda", "Tequila", "Tonic", "Vermouth", "Vokda",
                "Water", "Whiskey", "Wine"]
 
@@ -35,7 +35,7 @@ def refresh_drinks():
 
     recipe.value += '\n %s oz of %s' %(volume.value,liquor_choice.value) 
     
-    display_text = "With %s oz of %s, the drink\n is currently %s%% alcohol." %(volume.value,liquor_choice.value, total_proof)
+    display_text = "With %s oz of %s, the drink\n is currently %s%% alcohol." %(volume.value,liquor_choice.value, str(total_proof)[:4])
     display_drink.value = display_text
 
     
